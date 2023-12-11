@@ -99,11 +99,11 @@ def transformacion_lineal(vec_i = [1,0], vec_j = [0,1]):
             x = [i,i]
             y = [-10,10]
             fig.add_trace(go.Scatter(x=x, y=y, mode='lines',
-                                  line=dict(color='blue', width=1)))
+                                  line=dict(color='blue', width=1), opacity=0.2))
             x2 = [-10,10]
             y2 = [i,i] 
             fig.add_trace(go.Scatter(x=x2, y=y2, mode='lines',
-                                  line=dict(color='blue', width=1)))
+                                  line=dict(color='blue', width=1), opacity=0.2))
             
     for i in range(-10,11):
             vec_i = np.array(vec_i)
@@ -112,13 +112,13 @@ def transformacion_lineal(vec_i = [1,0], vec_j = [0,1]):
             y = [-10,10]  
             x,y = eslamiento_cordenadas(x,y,vec_i,vec_j)
             fig.add_trace(go.Scatter(x=x, y=y, mode='lines',
-                                  line=dict(color='red', width=2)))
+                                  line=dict(color='red', width=2), opacity=0.2))
             
             x2 = [-10,10]
             y2 = [i,i]
             x2,y2 = eslamiento_cordenadas(x2,y2,vec_i,vec_j)
             fig.add_trace(go.Scatter(x=x2, y=y2, mode='lines',
-                                  line=dict(color='red', width=1)))
+                                  line=dict(color='red', width=1), opacity=0.2))
     x = [0, vec_i[0]]
     y = [0, vec_i[1]]
     fig.add_trace(go.Scatter(x=x, y=y, mode='markers+lines',
