@@ -12,8 +12,8 @@ class vector():
         
     def __add__(self, otro_objeto):
         if isinstance(otro_objeto, vector):
-            fig_suma = crear_figura_suma(self.vector, otro_objeto,self.vector_base)
-            fig_suma.show()
+            self.fig_suma = crear_figura_suma(self.vector, otro_objeto,self.vector_base)
+            #self.fig_suma.show()
             lista_other   = list(self.vector + otro_objeto.vector)
             return vector(lista_other[0],lista_other[1])
         else:
@@ -27,17 +27,20 @@ class vector():
             raise TypeError("No se puede multiplicar con un objeto de otra clase") 
             
     def mostrar(self):
-        self.fig.show()
+        #self.fig.show()
+        pass
         
     def subespacio(self, otro_objeto):
         if np.all(np.cross(self.vector, otro_objeto.vector) == 0):
-            fig_em = espacio_muestral()
-            fig_em.show()
-            print("Espacio limitado, dado que existe colinealidad entre los vectores")            
+            self.fig_em = espacio_muestral()
+            #self.fig_em.show()
+             print("Espacio limitado, dado que existe colinealidad entre los vectores") 
+            return self.fig_em
+                      
             
         else:
             fig_em = espacio_muestral("global")
-            fig_em.show()
+            #fig_em.show()
             print("Todo el plano, dado que no existe colinealidad entre los vectores")
             
     def transformación_lineal(self,vec_i = [1,0], vec_j = [0,1]):
